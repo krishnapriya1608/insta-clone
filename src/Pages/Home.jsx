@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Profilepage() {
+function Home() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Profilepage() {
   )
 }
 
-export default Profilepage
+export default Home

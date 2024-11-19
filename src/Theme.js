@@ -8,7 +8,7 @@ const config = {
 const styles = {
   global: {
     body: {
-      bg: 'black', // Ensure the background is set to black globally
+      bg: 'dark', // Ensure the background is set to black globally
       color: 'white', // Set text color to white
     },
   },

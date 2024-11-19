@@ -1,145 +1,40 @@
-import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Input,
-  Stack,
-  FormControl,
-  FormLabel,
-  Text,
-  VStack,
-  HStack,
-  Image,
-  Link,
-} from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { Container ,Flex, VStack,Box,Image} from '@chakra-ui/react'
+import React from 'react'
+import AuthForm from '../Components/AuthForm'
 
-const AuthPage = () => {
-  const [inputs, setInputs] = useState({
-    email: "",
-    password: "",
-    confirmpassword: "",
-  });
 
-  const navigate = useNavigate(); // Initialize the useNavigate hook
-
-  const handleAuth = () => {
-    const { email, password, confirmpassword } = inputs;
-
-    // Basic validation
-    if (!email || !password || (confirmpassword && password !== confirmpassword)) {
-      alert("Please fill all fields correctly");
-      return;
-    }
-
-    // Navigate to the home page after successful validation
-    navigate("/home");
-  };
-
+function Auth() {
   return (
-    <Box
-      minH="100vh"
-      display="flex"
-      flexDirection={{ base: "column", md: "row" }}
-      bg="black"
-      p={4}
-    >
-      {/* Left Side: Image */}
-      <Box
-        flex="1"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        p={2}
-        maxW={{ base: "full", md: "50%" }}
-      >
-        <Image
-          src="./Loginicon.png"
-          alt="Instagram Phone Mockup"
-          height={{ base: "300px", md: "400px" }}
-          objectFit="contain"
-        />
-      </Box>
+    <div>
+      <Flex minH={"100vh"} justifyContent={"center"} alignItems={"center"} px={4}>
+      
+<Container minW={"container.md"} padding={0}>
+    <Flex justifyContent={"center"} alignItems={"center"} gap={10} >
+{/* Left hand side */}
+<Box display={{base:"none",md:"block"}}>
+<Image src="/igg.png" marginBottom={"70px"} h={550} alt='insta'/>
+</Box>
 
-      {/* Right Side: Form */}
-      <Box
-        flex="1"
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
-        p={4}
-        bg="black"
-        borderRadius="lg"
-        boxShadow="lg"
-        border="2px solid black"
-        maxW={{ base: "full", md: "25%" }}
-        height="auto"
-        ml={{ base: 0, md: "10%" }}
-      >
-        <VStack spacing={2} w="full" maxW="sm">
-          {/* Logo */}
-          <Image
-            src="./insta.png"
-            alt="Instagram Clone Logo"
-            height="50px"
-            objectFit="contain"
-          />
-          <Stack spacing={4} w="full">
-            <FormControl>
-              <FormLabel color="white">Email</FormLabel>
-              <Input
-                value={inputs.email}
-                onChange={(e) =>
-                  setInputs({ ...inputs, email: e.target.value })
-                }
-                placeholder="Enter your email"
-              />
-            </FormControl>
-            <FormControl>
-              <FormLabel color="white">Password</FormLabel>
-              <Input
-                type="password"
-                value={inputs.password}
-                onChange={(e) =>
-                  setInputs({ ...inputs, password: e.target.value })
-                }
-                placeholder="Enter your password"
-              />
-            </FormControl>
-            <FormControl>
-              <FormLabel color="white">Confirm Password</FormLabel>
-              <Input
-                type="password"
-                value={inputs.confirmpassword}
-                onChange={(e) =>
-                  setInputs({ ...inputs, confirmpassword: e.target.value })
-                }
-                placeholder="Confirm your password"
-              />
-            </FormControl>
-            <Button colorScheme="blue" size="md" width="full" onClick={handleAuth}>
-              Sign Up
-            </Button>
-          </Stack>
-          <Text fontSize="sm" color="white">
-            Already have an account?{" "}
-            <Link color="blue.500" href="#">
-              Log In
-            </Link>
-          </Text>
-        </VStack>
-      </Box>
-    </Box>
-  );
-};
+{/* Right hand side */}
 
-export default AuthPage;
+<VStack spacing={4} align={"stretch"}>
+ <AuthForm/>
+<Box textAlign={"center"}>
+    Get the app
+</Box>
 
+<Flex gap={5} justifyContent={"center"}>
 
+    <Image src='/play1.png' h={"10"} alt='playstore logo'/>
+    <Image src='/google.png' h={"8"} alt='playstore logo'/>
+</Flex>
+</VStack>
+</Flex>
+</Container>
 
+      </Flex>
+    </div>
+  )
+}
 
-
-
-
-
+export default Auth
