@@ -35,7 +35,7 @@ navigate("/")
               placeholder="Confirm Password"
               fontSize={14}
               value={inputs.confirmPassword}
-              onChange={(e)=>setInputs({...inputs,password:e.target.value})}
+              onChange={(e)=>setInputs({...inputs,confirmPassword:e.target.value})}
               type="password"
             />
           )}

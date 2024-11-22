@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./Pages/Home";
 import Auth from "./Pages/Auth";
 import { Route, Routes } from "react-router-dom";
+import PageLayout from "./Layout/PageLayout";
 
 
 
