@@ -28,26 +28,28 @@ function PostFooter({username}) {
                     aria-label="Like button"
                     cursor="pointer"
                     marginTop="20px"
+                    marginLeft={20}
+                    color={"white"}
                 >
                     {liked ? <FcLike /> : <FaRegHeart />}
                 </Box>
-                <Box cursor="pointer" fontSize={18} aria-label="Comment button" marginTop="20px">
+                <Box  color={"white"} cursor="pointer" fontSize={18} aria-label="Comment button" marginTop="20px">
                     <FaRegComment />
                 </Box>
             </Flex>
 
-            <Text fontWeight={600} fontSize="sm">
+            <Text fontWeight={600} color={"white"}  marginLeft={20} fontSize="sm">
                 {likes} likes
             </Text>
 
-            <Text fontSize="sm" fontWeight={700}>
+            <Text  marginLeft={20} color={"white"} fontSize="sm" fontWeight={700}>
              {username}{" "}
-                <Text as="span" fontWeight={400}>
+                <Text  as="span" fontWeight={400}>
                     Feeling good
                 </Text>
             </Text>
 
-            <Text fontSize="sm" color="gray">
+            <Text marginLeft={20} fontSize="sm" color="gray">
                 view all 1,000 comments
             </Text>
 
@@ -62,6 +64,7 @@ function PostFooter({username}) {
                         variant="flushed"
                         placeholder="Add a comment"
                         fontSize={14}
+                        marginLeft={20}
                     />
                     <InputRightElement >
                     <Button

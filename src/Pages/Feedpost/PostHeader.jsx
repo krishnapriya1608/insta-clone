@@ -13,10 +13,12 @@ function PostHeader({ username, avatar }) {
             width="30px"
             height="30px"
             src={avatar}
+            marginLeft={20}
             alt={`${username}'s avatar`}
+            marginTop={20}
           />
           {/* Username and Time */}
-          <Flex fontSize={12} fontWeight="bold" gap="3" color="gray.500">
+          <Flex fontSize={12} fontWeight="bold" gap="3" color="gray.500"  marginTop={20}>
             {username}
             <Box color="gray.500">.1w</Box>
           </Flex>
@@ -32,6 +34,7 @@ function PostHeader({ username, avatar }) {
               color: 'white',
             }}
             transition="0.2s ease-in-out"
+            marginTop={20}
           >
             Unfollow
           </Text>
